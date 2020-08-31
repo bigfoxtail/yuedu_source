@@ -4,6 +4,8 @@
 
 [https://github.com/bigfoxtail/yuedu_source/releases/latest/download/yuedu_source.json](yuedu://booksource/importonline?src=https://github.com/bigfoxtail/yuedu_source/releases/latest/download/yuedu_source.json)
 
+无法扫描请Ctrl+A全选使文字为反色
+
 ```
 █████████████████████████████████████████████
 █████████████████████████████████████████████
