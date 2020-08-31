@@ -1,10 +1,21 @@
 阅读源-整合
 =
-源url:
+
+该书源属于多个书源的合并版，使用以下地址的书源合并：
+```
+  https://xiu2.github.io/yuedu/shuyuan
+  http://alanskycn.gitee.io/vip/assets/import/book_source.json
+  https://gitee.com/zmn1307617161/booksource/raw/master/%E4%B9%A6%E6%BA%90/%E7%B2%BE%E6%8E%923.txt
+  https://gitee.com/haobai1/bookyuan/raw/master/shuyuan.json
+  https://gitee.com/slght/yuedu_booksource/raw/master/%E4%B9%A6%E6%BA%90/API%E4%B9%A6%E6%BA%90_3.0.json
+```
+没有处理，只是单纯的合并为了导入方便。
+
+合并书源url:
 
 [https://github.com/bigfoxtail/yuedu_source/releases/latest/download/yuedu_source.json](yuedu://booksource/importonline?src=https://github.com/bigfoxtail/yuedu_source/releases/latest/download/yuedu_source.json)
 
-无法扫描请Ctrl+A全选使文字为反色
+无法扫描请Ctrl+A全选使文字反色显示。
 
 ```
 █████████████████████████████████████████████
