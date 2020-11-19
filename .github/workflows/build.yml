@@ -16,8 +16,8 @@ jobs:
           pip install --upgrade pip wheel
           pip install demjson
           pip install requests
-          echo "::set-env name=RELEASE_NAME::Released on $(date +%Y%m%d%H%M)"
-          echo "::set-env name=TAG_NAME::$(date +%Y%m%d%H%M)"
+          echo "RELEASE_NAME=Released on $(date +%Y%m%d%H%M)" >> $GITHUB_ENV
+          echo "TAG_NAME=$(date +%Y%m%d%H%M)" >> $GITHUB_ENV
         shell: bash
 
       - name: Checkout
