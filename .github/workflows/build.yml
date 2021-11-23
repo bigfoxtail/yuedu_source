@@ -28,8 +28,10 @@ jobs:
       - name: makefile
         run: |
           python makefile.py
+          python clear.py
           mkdir -p ./publish
-          mv ./yuedu_source.json ./publish/
+          mv ./clear_yuedu_source.json ./publish/yuedu_source.json
+          mv ./yuedu_source.json ./publish/no_clear_yuedu_source.json
 
       - name: Create a release
         id: create_release

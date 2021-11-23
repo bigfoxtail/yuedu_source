@@ -90,13 +90,13 @@ headers = {
 source_content = []
 
 # 手动写死算了 省事 谁知道以后要不要单独处理
-with open("book\BookSource.json", 'r', encoding='utf-8') as file_to_read:
+with open("./book/BookSource.json", 'r', encoding='utf-8') as file_to_read:
     resjson = json.loads(file_to_read.read().replace('\n', ""))
     source_content.extend(resjson)
-with open("book\OldBookSource.json", 'r', encoding='utf-8') as file_to_read:
+with open("./book/OldBookSource.json", 'r', encoding='utf-8') as file_to_read:
     resjson = json.loads(file_to_read.read().replace('\n', ""))
     source_content.extend(resjson)
-with open("book\RSSSource.json", 'r', encoding='utf-8') as file_to_read:
+with open("./book/RSSSource.json", 'r', encoding='utf-8') as file_to_read:
     resjson = json.loads(file_to_read.read().replace('\n', ""))
     source_content.extend(resjson)
 
@@ -118,4 +118,4 @@ with open(f, "w") as file:
     content = json.dumps(source_content, sort_keys=True)
     content = json.loads(content)
     content = delete_duplicate_str(content)
-    file.write(json.dumps(content))
+    file.write(json.dumps(content, sort_keys=True))

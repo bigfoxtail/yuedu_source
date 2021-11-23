@@ -35,7 +35,7 @@ for d in source_content:
         if SourceList.get(bookSourceUrl.strip()) is None:
             SourceList[bookSourceUrl.strip()] = d
         else:
-            if SourceList[bookSourceUrl.strip()].get("lastUpdateTime", 0) < d.get("lastUpdateTime", 0):
+            if SourceList[bookSourceUrl.strip()].get("lastUpdateTime", -1) < d.get("lastUpdateTime", -1):
                 SourceList[bookSourceUrl.strip()] = d
     else:
         new_RSS_content.append(d)
@@ -51,4 +51,4 @@ with open(f, "w") as file:
     file.write(json.dumps(new_RSS_content))
 f = "clear_yuedu_source.json"
 with open(f, "w") as file:
-    file.write(json.dumps(SourceList))
+    file.write(json.dumps(SourceList, sort_keys=True))
