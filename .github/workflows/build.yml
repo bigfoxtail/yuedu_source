@@ -2,7 +2,7 @@ name: Build yuedu_source file
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 22 * * *"
+    - cron: "0 22 * * 0"
   push:
     branches:
       - master
@@ -30,8 +30,9 @@ jobs:
           python makefile.py
           python clear.py
           mkdir -p ./publish
-          mv ./clear_yuedu_source.json ./publish/yuedu_source.json
+          mv ./yuedu_clear_source.json ./publish/yuedu_source.json
           mv ./yuedu_source.json ./publish/no_clear_yuedu_source.json
+          mv ./yuedu_rss_source.json ./publish/yuedu_rss_source.json
 
       - name: Create a release
         id: create_release
