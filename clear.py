@@ -37,6 +37,21 @@ def get_search_url(SourceUrl, SearchUrl):
         return UrlSplit.scheme + "://" + UrlSplit.netloc
 
 
+def takeUpdateTime(elem):
+    return elem.get("lastUpdateTime", 0)
+
+
+def sortSource(source_content):
+    sort_list = []
+    source_content.sort(key=takeUpdateTime, reverse=True)
+    i = 1
+    for d in source_content:
+        d["customOrder"] = i
+        sort_list.append(d)
+        i = i + 1
+    return sort_list
+
+
 def filter_str(desstr):
     restr = ''
     # 过滤除中英文及数字以外的其他字符
@@ -131,4 +146,4 @@ with open(f, "w") as file:
 f = "yuedu_clear_source.json"
 with open(f, "w") as file:
     # file.write(json.dumps(SourceList, sort_keys=True))
-    file.write(json.dumps(CheckList, sort_keys=True))
+    file.write(json.dumps(sortSource(CheckList), sort_keys=True))
