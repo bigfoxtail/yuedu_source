@@ -95,6 +95,11 @@ for d in source_content:
     SearchFlage = "N"
     OnlyFindFlage = "N"
 
+    # 处理异常的url
+    if d.get("ruleSearchUrl") is not None:
+        reurl = re.compile("\|https?://.*$")
+        d["ruleSearchUrl"] = reurl.sub("", d.get("ruleSearchUrl"))
+
     if d.get("ruleFindUrl") is not None:
         FindFlage = "Y"
     if d.get("ruleSearchUrl") is not None or d.get("searchUrl") is not None:
